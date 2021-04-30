@@ -153,7 +153,7 @@ const removeManyPeople = (done) => {
 const queryChain = (done) => {
   const foodToSearch = "burrito";
 // this is very useful
-  Person.find({favoriteFoods: foodToSearch})
+  Person.find({favoriteFoods: {$all: foodToSearch}})
 //you can ascend or decend by using '-'
     .sort('name')
     .limit(2)
